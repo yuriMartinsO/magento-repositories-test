@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--
+  ~ @author      Webjump Core Team <dev@webjump.com.br>
+  ~ @copyright   2022 Webjump (http://www.webjump.com.br)
+  ~ @license     http://www.webjump.com.br  Copyright
+  ~ @link        http://www.webjump.com.br
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="custom_grid_listing_data_source" xsi:type="string">Meetanshi\Extension\Model\ResourceModel\Extension\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Meetanshi\Extension\Model\ResourceModel\Extension\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">extension</argument>
+            <argument name="resourceModel" xsi:type="string">Meetanshi\Extension\Model\ResourceModel\Extension\Collection</argument>
+        </arguments>
+    </type>
+    <virtualType name="YuriGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Meetanshi\Extension\Model\ResourceModel\Extension\Grid\Collection</argument>
+        </arguments>
+    </virtualType>
+</config>

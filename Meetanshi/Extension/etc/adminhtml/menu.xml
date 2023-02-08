@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Meetanshi_Extension::menu" title="Yuri"
+            module="Meetanshi_Extension"
+            resource="Meetanshi_Extension::menu"
+            sortOrder="10"/>
+            <add id="Meetanshi_Extension::item"
+                title="Yuri lista"
+                module="Meetanshi_Extension"
+                resource="Meetanshi_Extension::item"
+                parent="Meetanshi_Extension::menu"
+                action="extension/index/index"/>
+    </menu>
+</config>
